@@ -30,48 +30,6 @@ This project is designed for modular development across multiple LLM sessions:
 
 ## Documentation
 See `/docs` directory for detailed specifications and session handoffs.
-```
-
-
-
-### C. Basic docker-compose.yml template
-```yaml
-version: '3.8'
-
-services:
-  database:
-    image: postgres:15-alpine
-    environment:
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DB: ${POSTGRES_DB}
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
-
-  redis:
-    image: redis:7-alpine
-    ports:
-      - "6379:6379"
-    volumes:
-      - redis_data:/data
-
-  elasticsearch:
-    image: elasticsearch:8.8.0
-    environment:
-      - discovery.type=single-node
-      - xpack.security.enabled=false
-    ports:
-      - "9200:9200"
-    volumes:
-      - elasticsearch_data:/usr/share/elasticsearch/data
-
-volumes:
-  postgres_data:
-  redis_data:
-  elasticsearch_data:
-```
 
 ## 3. LLM Session Coordination System
 
