@@ -1,4 +1,3 @@
-### Session Handoff Template
 # Session [NUMBER] - [COMPONENT_NAME]
 
 ## Session Objectives
